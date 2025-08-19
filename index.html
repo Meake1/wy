@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问引导 - 请使用代理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        .proxy-card {
+            transition: all 0.3s ease;
+        }
+        
+        .proxy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full">
+        <!-- 主容器 -->
+        <div class="glass-effect rounded-3xl p-8 md:p-12 text-white">
+            <!-- 头部图标和标题 -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6 animate-float">
+                    <i class="fas fa-globe text-4xl"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">访问受限</h1>
+                <p class="text-xl text-white/80 max-w-2xl mx-auto">
+                    由于域名备案问题，直接访问可能受限。请使用代理工具访问我们的网站。
+                </p>
+            </div>
+
+            <!-- 代理工具推荐 -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-shield-alt mr-3"></i>
+                    推荐代理工具
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="proxy-card bg-white/10 rounded-2xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-rocket text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">Clash</h3>
+                                <p class="text-white/70">跨平台代理工具</p>
+                            </div>
+                        </div>
+                        <p class="text-white/80 mb-4">功能强大的代理客户端，支持多种协议，界面友好。</p>
+                        <button class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition-colors">
+                            下载 Clash
+                        </button>
+                    </div>
+
+                    <div class="proxy-card bg-white/10 rounded-2xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-fire text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold">V2RayN</h3>
+                                <p class="text-white/70">Windows 专用客户端</p>
+                            </div>
+                        </div>
+                        <p class="text-white/80 mb-4">轻量级Windows代理工具，配置简单，性能优秀。</p>
+                        <button class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg transition-colors">
+                            下载 V2RayN
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 配置教程 -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-cog mr-3"></i>
+                    配置教程
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Clash 配置 -->
+                    <div class="bg-white/5 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-300">Clash 配置步骤</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-medium mb-2">下载并安装 Clash</h4>
+                                    <p class="text-white/70">从官网下载对应系统的 Clash 客户端并安装。</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-medium mb-2">导入配置文件</h4>
+                                    <p class="text-white/70 mb-2">将以下配置保存为 config.yaml 文件：</p>
+                                    <div class="code-block">
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+proxies:
+  - name: "MyProxy"
+    type: http
+    server: your-proxy-server
+    port: 8080
+    username: your-username
+    password: your-password
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - "MyProxy"
+      - DIRECT
+rules:
+  - DOMAIN-SUFFIX,your-domain.com,Proxy
+  - MATCH,DIRECT
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">3</div>\                                <div>
+                                    <h4 class="font-medium mb-2">启动代理</h4>
+                                    <p class="text-white/70">点击启动按钮，Clash 会自动加载配置并开始代理。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- V2RayN 配置 -->
+                    <div class="bg-white/5 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-green-300">V2RayN 配置步骤</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-medium mb-2">下载 V2RayN</h4>
+                                    <p class="text-white/70">下载最新版本的 V2RayN 压缩包并解压。</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-medium mb-2">添加服务器配置</h4>
+                                    <p class="text-white/70 mb-2">点击服务器 -> 添加VMess服务器，填写以下信息：</p>
+                                    <div class="code-block">
+地址：your-proxy-server
+端口：8080
+用户ID：your-uuid
+额外ID：0
+加密方式：auto
+传输协议：tcp
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">3</div>
+                                <div>
+                                    <h4 class="font-medium mb-2">启用系统代理</h4>
+                                    <p class="text-white/70">右键点击托盘图标，选择启用系统代理。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 浏览器代理设置 -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-browser mr-3"></i>
+                    浏览器代理设置
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white/10 rounded-xl p-4 text-center">
+                        <i class="fab fa-chrome text-3xl mb-3"></i>
+                        <h4 class="font-semibold mb-2">Chrome</h4>
+                        <p class="text-white/70 text-sm">安装 SwitchyOmega 扩展</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-4 text-center">
+                        <i class="fab fa-firefox text-3xl mb-3"></i>
+                        <h4 class="font-semibold mb-2">Firefox</h4>
+                        <p class="text-white/70 text-sm">设置 -> 网络设置</p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-4 text-center">
+                        <i class="fab fa-safari text-3xl mb-3"></i>
+                        <h4 class="font-semibold mb-2">Safari</h4>
+                        <p class="text-white/70 text-sm">偏好设置 -> 网络</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 状态指示器 -->
+            <div class="text-center">
+                <div class="inline-flex items-center bg-white/10 rounded-full px-6 py-3 animate-pulse-slow">
+                    <div class="w-3 h-3 bg-yellow-400 rounded-full mr-3"></div>
+                    <span class="font-medium">等待代理连接...</span>
+                </div>
+                <p class="text-white/60 mt-4">配置完成后，请刷新此页面继续访问</p>
+            </div>
+        </div>
+
+        <!-- 底部信息 -->
+        <div class="text-center mt-8 text-white/60">
+            <p>&copy; wmsys.org ---七度光</p>
+        </div>
+    </div>
+
+    <script>
+        // 检测代理状态
+        function checkProxyStatus() {
+            const statusIndicator = document.querySelector('.animate-pulse-slow');
+            const statusDot = statusIndicator.querySelector('.w-3');
+            const statusText = statusIndicator.querySelector('span');
+            
+            // 模拟检测代理状态
+            setTimeout(() => {
+                statusDot.className = 'w-3 h-3 bg-green-400 rounded-full mr-3';
+                statusText.textContent = '代理连接正常';
+                statusIndicator.classList.remove('animate-pulse-slow');
+                
+                // 显示成功消息
+                const successMsg = document.createElement('div');
+                successMsg.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform';
+                successMsg.innerHTML = '<i class="fas fa-check mr-2"></i>代理已连接，可以正常访问网站';
+                document.body.appendChild(successMsg);
+                
+                setTimeout(() => {
+                    successMsg.style.transform = 'translateX(0)';
+                }, 100);
+            }, 3000);
+        }
+
+        // 页面加载完成后检测
+        document.addEventListener('DOMContentLoaded', checkProxyStatus);
+
+        // 按钮点击事件
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                const toolName = this.textContent.trim();
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 right-4 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform';
+                notification.innerHTML = `<i class="fas fa-download mr-2"></i>正在跳转到 ${toolName} 下载页面...`;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                }, 100);
+                
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => notification.remove(), 300);
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
